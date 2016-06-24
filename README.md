@@ -1,11 +1,9 @@
-<snippet>
-  <content><![CDATA[
-# ${1:BashChat}
-BashChat is a simple but elegant chatroom application that can be run within bash.
-## Installation
-TODO: Describe the installation process here
+# BashChat
+BashChat is a simple but elegant chat room application that can be run within bash.
+## Before you start hacking
+I have added detailed descriptions at the beginning of server.py and client.py. Please take a minute to read each of them before you start hacking away.
 ## Usage
-TODO: Simply run 'server.py' and the 'client.py'
+Simply run 'server.py' and then 'client.py'
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
