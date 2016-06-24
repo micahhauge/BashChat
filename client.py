@@ -2,34 +2,6 @@
 BashChat Client Script
 Author(s): Micah Hauge, ...(feel free to add your name here if you contributed)
 Last Updated: 6/22/2016 by Micah Hauge
-
-*****USAGE*****
-Run client without specifying port (defaults to 9001):
-    python3 client.py
-
-Run server on a specific port:
-    python3 client.py 1234
-
-****NOTES BEFORE HACKING AWAY*****
-1) If the port is already in use, you will get the following error or somthing similar:
-       OSError: [Errno 98] Address already in use
-
-   Simply try using a different port. Anything above 5000 should be safe.
-
-2) The server must be run first and the server and client must be run on the same port (duh..)
-   if you don't run them on the same port, you will get the following error (or something similar):
-       OSError: [Errno 107] Transport endpoint is not connected
-
-3) All messages exchanged between server and client must be a 'bytes-like' object.
-   You can convert a string to a bytes object with: string.encode('encodingType')
-   I have chosen to use utf-8 encoding because it appears to be the current standard.
-   So, this is how to encode a strings before it is sent:
-       myString.encode('utf-8')
-
-   Also note that the receiving end can convert it back to can string with the following:
-       myBytesObject.decode('utf-8')
-
-GLFH!
 """
 
 import socket
