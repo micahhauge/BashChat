@@ -2,38 +2,48 @@
 BashChat is a simple but elegant chat room application that can be run within bash.
 
 ## Usage
-run client and server without specifying port (defaults to 9001):
-    python3 client.py
-    python3 server.py
+To run client and server without specifying port (defaults to 9001):
+```
+python3 client.py
+python3 server.py
+```
+To run client and server on a specific port (must be the same.. duh):
+```
+python3 client.py 1234
+python3 server.py 1234
+```
+Currently the server simply echos the messages sent to it by the client back to the client.
 
-Run client and server on a specific port (must be the same.. duh):
-    python3 client.py 1234
-    python3 server.py 1234
-
-## Before you start hacking
-1) If the port is already in use, you will get the following error or something similar:
-       OSError: [Errno 98] Address already in use
-
-   Simply try using a different port. Anything above 5000 should be safe.
+## A few things before you start hacking
+If the ports you are trying to use are already in use, you will get the following error or something similar:
+```
+OSError: [Errno 98] Address already in use
+```
+Simply try using a different port. Anything above 5000 should be safe.
 
 
-2) The server must be run first and the server and client must be run on the same port (duh..)
-   if you don't run them on the same port, you will get the following error (or something similar):
-       OSError: [Errno 107] Transport endpoint is not connected
+The server must be run first and the server and client must be run on the same port (duh). If you don't run them on the same port, you will get the following error (or something similar):
+```
+OSError: [Errno 107] Transport endpoint is not connected
+```
 
-3) All messages exchanged between server and client must be a 'bytes-like' object.
-   You can convert a string to a bytes object with: string.encode('encodingType')
-   I have chosen to use utf-8 encodeing because it appears to be the current standard.
-   So, this is how to encode all strings before they are sent:
-       myString.encode('utf-8')
 
-   Also note that the receiving end can convert it back to can string with the following:
-       myBytesObject.decode('urf-8')
+All messages exchanged between server and client __must__ be a '_bytes-like_' object. You can convert a string to a bytes object with:
+```python
+string.encode('encodingType')
+```
+I have chosen to use utf-8 encoding because it appears to be the current standard. So, this is how you should encode all strings before they are sent:
+```python
+myString.encode('utf-8')
+```
+Also note that the receiving end can convert it back to can string with the following:
+```python
+myBytesObject.decode('urf-8')
+```
 
-4) Notice that a new thread is created for each incoming connection.
-   This is to allow multiple clients to be served at a time.
+Notice that a new thread is created for each incoming connection. This is to allow multiple clients to be served at a time.
 
-GLFH!
+__Be sure to write good comments and descriptive commit messages! GLFH and happy coding!__
 
 ## Contributing
 1. Fork it!
