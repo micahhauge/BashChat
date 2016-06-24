@@ -36,7 +36,7 @@ I have chosen to use utf-8 encoding because it appears to be the current standar
 ```python
 myString.encode('utf-8')
 ```
-Also note that the receiving end can convert it back to can string with the following:
+Also note that the receiving end can convert the bytes object back to a string with the following:
 ```python
 myBytesObject.decode('urf-8')
 ```
@@ -51,5 +51,8 @@ __Be sure to write good comments and descriptive commit messages! GLFH and happy
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
+ 
+
+
 ## Credits
 Author(s): Micah Hauge, (feel free to add your name here)
