@@ -1,6 +1,6 @@
 """
 BashChat Client Script
-Author(s): Micah Hauge, ...(feel free to add your name here if you contributed)
+Author(s): Micah Hauge, Adam Mischke, ...(feel free to add your name here if you contributed)
 Last Updated: 6/22/2016 by Micah Hauge
 """
 
