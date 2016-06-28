@@ -90,7 +90,7 @@ def client_thread(conn):
             break
 
         # send reply to client
-        reply = 'ECHO FROM SERVER: ' + data.decode('utf-8')
+        reply = data.decode('utf-8')
         conn.sendall(reply.encode('utf-8'))
 
         print("SERVER: sending '" + data.decode('utf-8') + "' back to client.")

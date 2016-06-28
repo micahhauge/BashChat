@@ -6,6 +6,11 @@ Last Updated: 6/22/2016 by Micah Hauge
 
 import socket
 import sys
+from random import randint
+
+# prints in red, gray, green, white, pink, and blue ANSI Escape sequences
+def color(name):
+    return ('\033[9' + str(randint(0,5)) + 'm' + '{}\033[00m' .format(name))
 
 
 # Testing locally for now. This will be easy to change later though
@@ -30,25 +35,32 @@ try:
 except:
     print("Something went wrong! Make sure that you are running server.py and that you are using the right port.");
 
+ID = color(str(input('Login: ')))  # login and get a color
+
 print("Connection established on port", PORT,".")
 print("You can now start sending messages here. Currently, the server should just echo the message back.")
 
 while 1:
+                   
     # Receive data from server
     data = s.recv(SIZE)
-    print ("RCVD: " + data.decode('utf-8'))
+    print (ID + ':' , data.decode('utf-8'))
 
     # get input and send it to server send
     nb = str(input())
-    print("Sending: " + nb)
-    s.send(nb.encode('utf-8'));
+    
+    # exit NEED SUGGESTIONS
+    if (nb == ':q'):
+        break                           # breaks the loop
+
+    try:                                # try to send
+        s.send(nb.encode('utf-8'));     
+    except:                             # except and try again
+        print("Couldn't send, try again")
 
 # end connection. Although this should never happen because if infinite loop above
 s.close()
 
 
 
-# prints in red red
-def red(name):
-    print ("\033[91m {}\033[00m" .format(name))
-red("hi")
+
